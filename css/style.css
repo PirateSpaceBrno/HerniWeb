@@ -15,10 +15,12 @@ body {
 
 a:link, a:visited {
   color:            #3a3a3a;
+  cursor: pointer;
 }
 
 a:hover {
   color:          #000000;
+  cursor: pointer;
 }
 
 label {
@@ -30,7 +32,28 @@ label {
 }
 
 div.button {
-  margin: 0 0 10px 0;
+  margin: auto auto 10px auto;
+  position: relative;
+  width: 700px;
+  height: 150px;
+}
+
+div.note {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 14pt;
+  background: rgba(255, 255, 255, 0.75);
+  padding-top: 70px;
+  font-weight: 700;
+  display: none;
+  cursor: pointer;
+}
+
+div.button:hover div.note {
+  display: block;
 }
 
 #line {

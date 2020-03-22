@@ -18,6 +18,8 @@
     <link href="css/font.css" rel="stylesheet" type="text/css" media="screen,projection" />
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen,projection" />
     <link href="images/logo.svg" type="image/svg+xml" sizes="16x16" rel="icon" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -25,14 +27,36 @@
     <img src="images/spesherni.png" id="logo" />
 
     <div class="button">
-        <a href="#">
+        <a onmouseover="javascript:$('#nodeMc').text('Zkopírovat adresu serveru');" onclick="javascript:copyStringToClipboard('krtkovo.eu:25564'); $('#nodeMc').text('Zkopírováno');">
             <img src="images/minecraft_button.png" />
         </a>
+        <div class="note" id="noteMc">Zkopírovat adresu serveru</div>
     </div>
     <div class="button">
-        <a href="#">
+        <a onmouseover="javascript:$('#nodeCs').text('Zkopírovat adresu serveru');" onclick="javascript:copyStringToClipboard('krtkovo.eu:25565'); $('#nodeCs').text('Zkopírováno');">
             <img src="images/cs_button.png" />
         </a>
+        <div class="note" id="nodeCs">Zkopírovad adresu serveru</div>
     </div>
+
+    <script type="text/javascript">
+        function copyStringToClipboard (str) {
+            // Create new element
+            var el = document.createElement('textarea');
+            // Set value (string to be copied)
+            el.value = str;
+            // Set non-editable to avoid focus and move outside of view
+            el.setAttribute('readonly', '');
+            el.style = {position: 'absolute', left: '-9999px'};
+            document.body.appendChild(el);
+            // Select text inside element
+            el.select();
+            // Copy text to clipboard
+            document.execCommand('copy');
+            // Remove temporary element
+            document.body.removeChild(el);
+        }
+
+    </script>
 </body>
 </html>
