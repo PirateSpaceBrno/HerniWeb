@@ -19,26 +19,6 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="screen,projection" />
     <link href="images/logo.svg" type="image/svg+xml" sizes="16x16" rel="icon" />
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-</head>
-
-<body>
-    <div id="line"></div>
-    <img src="images/spesherni.png" id="logo" />
-
-    <div class="button">
-        <a onmouseover="javascript:$('#nodeMc').text('Zkopírovat adresu serveru');" onclick="javascript:copyStringToClipboard('krtkovo.eu:25564'); $('#nodeMc').text('Zkopírováno');">
-            <img src="images/minecraft_button.png" />
-        </a>
-        <div class="note" id="noteMc">Zkopírovat adresu serveru</div>
-    </div>
-    <div class="button">
-        <a onmouseover="javascript:$('#nodeCs').text('Zkopírovat adresu serveru');" onclick="javascript:copyStringToClipboard('krtkovo.eu:25565'); $('#nodeCs').text('Zkopírováno');">
-            <img src="images/cs_button.png" />
-        </a>
-        <div class="note" id="nodeCs">Zkopírovad adresu serveru</div>
-    </div>
-
     <script type="text/javascript">
         function copyStringToClipboard (str) {
             // Create new element
@@ -55,8 +35,28 @@
             document.execCommand('copy');
             // Remove temporary element
             document.body.removeChild(el);
+
+            window.alert("Zkopírováno do schránky");
         }
 
     </script>
+</head>
+
+<body>
+    <div id="line"></div>
+    <img src="images/spesherni.png" id="logo" />
+
+    <div class="button">
+        <a onclick="javascript:copyStringToClipboard('krtkovo.eu:25564');">
+            <img src="images/minecraft_button.png" />
+            <div class="note" id="noteMc">Zkopírovat adresu serveru</div>
+        </a>
+    </div>
+    <div class="button">
+        <a onclick="javascript:copyStringToClipboard('krtkovo.eu:25565');">
+            <img src="images/cs_button.png" />
+            <div class="note" id="noteCs">Zkopírovat adresu serveru</div>
+        </a>
+    </div>
 </body>
 </html>
